@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <h2>Please enter correct number</h2>
+        <form method="post">
+            <h5>enter a pair of coordinate numbers and separate them with ";"
+                also the number of coordinates must be at least 4
+            it should looks like this (1,1;1,2;2,2;2,1)</h5>
+            <input type="text" name="text" placeholder="Enter coordinates:"><br>
+            <button type="submit">sent</button>
+        </form>
+    </div>
+    <div> list of coordinates </div>
+    <thead>
+    <tr>
+        <th> X </th>
+        <th> Y </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${points.empty}">
+        <td colspan="2"> No points Available </td>
+    </tr>
+    <tr th:each="point : ${points}">
+        <td><span th:text="${point.coordinateX}"> X </span></td>
+        <td><span th:text="${point.coordinateY}"> Y </span></td>
+    </tr>
+    </tbody>
+</body>
+</html>
