@@ -50,15 +50,15 @@ public class CoordinatesController {
 
     @GetMapping
     public String get(Model model) {
-        Coordinates coordinates = coordinatesService.getById(2L).get();
-        model.addAttribute("points", coordinates.getPoints());
+        List<Coordinates> coordinates = coordinatesService.getAll();
+        model.addAttribute("points", coordinates);
         return "index";
     }
 
     @SneakyThrows
     @GetMapping("/canvas/{id}")
-    public String getCanvas(@PathVariable String id, Model model) {
-        Coordinates coordinates = coordinatesService.getById(Long.valueOf(id)).get();
+    public String getCanvas( @PathVariable String id, Model model) {
+        Coordinates coordinates = coordinatesService.getById(Long.parseLong(id)).get();
         ObjectMapper objectMapper = new ObjectMapper();
 
         String stringJson = objectMapper.writeValueAsString(coordinates.getPoints());

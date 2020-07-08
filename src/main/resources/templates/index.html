@@ -8,9 +8,10 @@
     <div>
         <h2>Please enter correct number</h2>
         <form method="post">
-            <h5>enter a pair of coordinate numbers and separate them with ";"
-                also the number of coordinates must be at least 4
-            it should looks like this (1,1;1,2;2,2;2,1)</h5>
+            <h5>please enter coordinate like 1,1;1,2;2,2;2,1</h5>
+            <h5>each pair coordinate should be more than 3</h5>
+            <h5>if you entered more than 2 element next element will be ignored</h5>
+            <h5>like this 1,2,3 - 3 will be ignored)</h5>
             <input type="text" name="text" placeholder="Enter coordinates:"><br>
             <button type="submit">sent</button>
         </form>
@@ -18,8 +19,7 @@
     <div> list of coordinates </div>
     <thead>
     <tr>
-        <th> X </th>
-        <th> Y </th>
+        <th> coordinate id </th>
     </tr>
     </thead>
     <tbody>
@@ -27,8 +27,7 @@
         <td colspan="2"> No points Available </td>
     </tr>
     <tr th:each="point : ${points}">
-        <td><span th:text="${point.coordinateX}"> X </span></td>
-        <td><span th:text="${point.coordinateY}"> Y </span></td>
+        <a th:href="@{http://localhost:8080/canvas/{id}(id = ${point.id})}" >[[${point.id}]]</a>
     </tr>
     </tbody>
 </body>
