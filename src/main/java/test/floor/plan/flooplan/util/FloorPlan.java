@@ -18,6 +18,8 @@ public class FloorPlan {
                         && !coordinates.get(i).getCoordinateY().equals(coordinates.get(i + 1).getCoordinateY())) {
                     return false;
                 }
+            } else if (coordinates.get(i).getCoordinateX() == 0){
+                return false;
             } else {
                 if (!coordinates.get(i).getCoordinateX().equals(coordinates.get(0).getCoordinateX())
                         && !coordinates.get(i).getCoordinateY().equals(coordinates.get(0).getCoordinateY())) {

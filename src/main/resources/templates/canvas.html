@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<canvas id="myCanvas" width="500" height="300"
+        style="border:1px solid #d3d3d3;">
+    Your browser does not support the canvas element.
+</canvas>
+<script>
+    let json = 'loading.json';
+    var fish = parse(json);
+    var x = fish[0]['coordinateX'] * 100;
+    var y = fish[0]['coordinateY'] * 100;
+    var x1 = fish[1]['coordinateX'] * 100;
+    var y1 = fish[1]['coordinateY'] * 100;
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    ctx.moveTo(x,y);
+    ctx.lineTo(x1,y1);
+    ctx.stroke();
+</script>
+
+</body>
+</html>
