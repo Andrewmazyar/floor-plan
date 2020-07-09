@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <body>
 <canvas id="myCanvas" width="500" height="300"
         style="border:1px solid #d3d3d3;">
     Your browser does not support the canvas element.
 </canvas>
+<tr th: id="${loading}"></tr>
+
 <script>
+    var fson = document.getElementById("${loading}");
+    var json = $.parseJSON(fson);
+    var int = json[0]["coordinateX"];
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
-    ctx.moveTo(x,y);
-    ctx.lineTo(x1,y1);
+    ctx.moveTo(0,0);
+    ctx.lineTo(500,300);
     ctx.stroke();
 </script>
 
