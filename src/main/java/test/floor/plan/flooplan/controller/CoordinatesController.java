@@ -59,10 +59,7 @@ public class CoordinatesController {
     @GetMapping("/canvas/{id}")
     public String getCanvas( @PathVariable String id, Model model) {
         Coordinates coordinates = coordinatesService.getById(Long.parseLong(id)).get();
-        ObjectMapper objectMapper = new ObjectMapper();
-
-        String stringJson = objectMapper.writeValueAsString(coordinates.getPoints());
-        model.addAttribute("loading", stringJson);
+        model.addAttribute("loading", coordinates.getPoints());
         return "canvas";
     }
 }
