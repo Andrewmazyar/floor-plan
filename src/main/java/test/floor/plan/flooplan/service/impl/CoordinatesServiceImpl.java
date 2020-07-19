@@ -29,4 +29,12 @@ public class CoordinatesServiceImpl implements CoordinatesService {
     public List<Coordinates> getAll() {
         return coordinatesRepository.findAll();
     }
+
+    @Override
+    public Coordinates getLast() {
+        return coordinatesRepository.findAll()
+                .stream()
+                .reduce((first, last) -> last)
+                .get();
+    }
 }

@@ -36,4 +36,15 @@ public class CanvasController {
         model.addAttribute("loading", result);
         return "canvas";
     }
+
+    @GetMapping("/canvas")
+    public String getCanvasLast(Model model) {
+        Coordinates coordinates = coordinatesService.getLast();
+        List<PointsDto> result = new ArrayList<>();
+        for (Points points : coordinates.getPoints()) {
+            result.add(pointMapper.convertToDto(points));
+        }
+        model.addAttribute("loading", result);
+        return "canvas";
+    }
 }

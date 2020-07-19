@@ -10,4 +10,6 @@ public interface CoordinatesService {
     Optional<Coordinates> getById(Long id);
 
     List<Coordinates> getAll();
+
+    Coordinates getLast();
 }
