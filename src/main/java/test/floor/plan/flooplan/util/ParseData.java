@@ -13,8 +13,8 @@ public class ParseData {
         for (String string : line.split(";")) {
             Points points = new Points();
             String[] iteration = string.split(",");
-            points.setCoordinateX(Integer.parseInt(iteration[0]));
-            points.setCoordinateY(Integer.parseInt(iteration[1]));
+            points.setFirst(Integer.parseInt(iteration[0]));
+            points.setSecond(Integer.parseInt(iteration[1]));
             pointsList.add(points);
         }
         return pointsList;

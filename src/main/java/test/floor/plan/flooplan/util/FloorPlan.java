@@ -14,15 +14,15 @@ public class FloorPlan {
         }
         for (int i = 0; i < coordinates.size(); i++) {
             if (i + 1 <= coordinates.size() - 1) {
-                if (!coordinates.get(i).getCoordinateX().equals(coordinates.get(i + 1).getCoordinateX())
-                        && !coordinates.get(i).getCoordinateY().equals(coordinates.get(i + 1).getCoordinateY())) {
+                if (!coordinates.get(i).getFirst().equals(coordinates.get(i + 1).getFirst())
+                        && !coordinates.get(i).getSecond().equals(coordinates.get(i + 1).getSecond())) {
                     return false;
                 }
-            } else if (coordinates.get(i).getCoordinateX() == 0){
+            } else if (coordinates.get(i).getFirst() == 0){
                 return false;
             } else {
-                if (!coordinates.get(i).getCoordinateX().equals(coordinates.get(0).getCoordinateX())
-                        && !coordinates.get(i).getCoordinateY().equals(coordinates.get(0).getCoordinateY())) {
+                if (!coordinates.get(i).getFirst().equals(coordinates.get(0).getFirst())
+                        && !coordinates.get(i).getSecond().equals(coordinates.get(0).getSecond())) {
                     return false;
                 }
             }

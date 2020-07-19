@@ -26,35 +26,35 @@ public class FlooPlanApplicationTests {
         parseData = new ParseData();
 
         Points points = new Points();
-        points.setCoordinateX(1);
-        points.setCoordinateY(1);
+        points.setFirst(1);
+        points.setSecond(1);
         pointsList1.add(points);
         wrongList.add(points);
 
         Points points1 = new Points();
-        points1.setCoordinateX(1);
-        points1.setCoordinateY(2);
+        points1.setFirst(1);
+        points1.setSecond(2);
         pointsList1.add(points1);
         wrongList.add(points1);
 
         Points points2 = new Points();
-        points2.setCoordinateX(0);
-        points2.setCoordinateY(2);
+        points2.setFirst(0);
+        points2.setSecond(2);
         pointsList1.add(points2);
 
         Points points3 = new Points();
-        points3.setCoordinateX(0);
-        points3.setCoordinateY(3);
+        points3.setFirst(0);
+        points3.setSecond(3);
         pointsList1.add(points3);
 
         Points points4 = new Points();
-        points4.setCoordinateX(2);
-        points4.setCoordinateY(3);
+        points4.setFirst(2);
+        points4.setSecond(3);
         pointsList1.add(points4);
 
         Points points5 = new Points();
-        points5.setCoordinateX(2);
-        points5.setCoordinateY(1);
+        points5.setFirst(2);
+        points5.setSecond(1);
         pointsList1.add(points5);
     }
 

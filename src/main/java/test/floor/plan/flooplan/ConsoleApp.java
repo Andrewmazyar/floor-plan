@@ -6,7 +6,7 @@ import test.floor.plan.flooplan.util.FileReaderConsole;
 import test.floor.plan.flooplan.util.FloorPlan;
 import test.floor.plan.flooplan.util.ParseData;
 
-public class ConsoleMain {
+public class ConsoleApp {
 
     public static void main(String[] args) throws IOException {
         ParseData parseData = new ParseData();
